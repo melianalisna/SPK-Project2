@@ -1,21 +1,12 @@
-import pickle
 import numpy as np
 import streamlit as st
 import joblib 
-import joblib
 
 # Simpan model
 joblib.dump(diabetes_model, 'random_forest_model.joblib')
 
 # Muat model
 diabetes_model = joblib.load('random_forest_model.joblib')
-
-# membaca model
-try:
-    diabetes_model = pickle.load(open('random_forest_model.sav', 'rb'))
-    st.write("Model berhasil dimuat.")
-except Exception as e:
-    st.write("Gagal memuat model:", e)
 
 # judul web
 st.title('Prediksi Penyakit Diabetes')
