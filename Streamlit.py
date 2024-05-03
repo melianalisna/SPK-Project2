@@ -1,7 +1,14 @@
 import pickle
 import numpy as np
 import streamlit as st
-import joblib  # tambahkan baris ini untuk mengimpor modul joblib
+import joblib 
+import joblib
+
+# Simpan model
+joblib.dump(diabetes_model, 'random_forest_model.joblib')
+
+# Muat model
+diabetes_model = joblib.load('random_forest_model.joblib')
 
 # membaca model
 try:
