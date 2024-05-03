@@ -1,6 +1,16 @@
 import pickle
 import numpy as np
 import streamlit as st
+import joblib
+
+# menyimpan model
+joblib.dump(diabetes_model, 'random_forest_model.pkl')
+# membaca model
+try:
+    diabetes_model = joblib.load('random_forest_model.pkl')
+    st.write("Model berhasil dimuat.")
+except Exception as e:
+    st.write("Gagal memuat model:", e)
 
 # membaca model
 try:
